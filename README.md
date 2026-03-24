@@ -1,32 +1,95 @@
-# 小霸王游戏机 Docker版
+# 小霸王游戏机 Docker 版
 
-基于 JSNES 的网页版 NES 模拟器，支持在浏览器中直接玩 FC/魂斗罗等游戏。
+基于 JSNES 的网页版 NES 模拟器，在浏览器中即可玩 FC/魂斗罗等经典游戏。
 
-## 快速部署
+![Docker Image Size](https://img.shields.io/docker/image-size/ghcr.io/liangminmx/bawang-nes?style=flat)
+![Docker Pulls](https://img.shields.io/docker/pulls/ghcr.io/liangminmx/bawang-nes?style=flat)
+
+## 特性
+
+- 🎮 支持 644 个 NES 游戏（魂斗罗、超级玛丽、忍者龙剑传等）
+- 🖥️ 支持 PC 和手机浏览器
+- 📱 支持触屏控制
+- 🐳 Docker 容器化部署
+- ☁️ GitHub Packages 自动构建
+
+## 快速开始
+
+### 使用 Docker Compose（推荐）
 
 ```bash
 # 克隆仓库
 git clone https://github.com/liangminmx/bawang-nes.git
 cd bawang-nes
 
-# 添加游戏ROM
-# 将 .nes 文件放到 roms/ 目录
-
-# 构建并运行
+# 启动服务
 docker-compose up -d
+
+# 访问游戏
+# http://localhost:8080
 ```
 
-## 访问
+### 使用 Docker
 
-打开浏览器访问: http://localhost:8080
+```bash
+# 拉取镜像
+docker pull ghcr.io/liangminmx/bawang-nes:latest
 
-## 添加游戏
+# 运行容器
+docker run -d -p 8080:80 --name bawang-nes ghcr.io/liangminmx/bawang-nes:latest
 
-将 NES 格式的 ROM 文件放入 `roms/` 目录，然后刷新页面即可看到新游戏。
+# 访问游戏
+# http://localhost:8080
+```
 
-## 控制器
+### 使用 Docker Run
 
-- **方向键**: 上/下/左/右
-- **A/B 键**: 攻击
-- **Select**: 选择游戏
-- **Start**: 开始/暂停
+```bash
+docker run -d \
+  --name bawang-nes \
+  -p 8080:80 \
+  ghcr.io/liangminmx/bawang-nes:latest
+```
+
+## 控制说明
+
+### 键盘控制
+
+| 按键 | 功能 |
+|------|------|
+| 方向键 | 上下左右 |
+| Z | A 键 |
+| X | B 键 |
+| Enter | Start |
+| Shift | Select |
+
+### 触屏控制
+
+手机浏览器访问时显示虚拟手柄，支持触屏操作。
+
+## 添加更多游戏
+
+将 `.nes` 格式的 ROM 文件放入 `roms/` 目录，然后重启容器即可。
+
+```bash
+# 复制新的 ROM 文件
+cp your_game.nes roms/
+
+# 重启容器
+docker-compose restart
+```
+
+## 技术栈
+
+- 前端：JSNES (JavaScript NES 模拟器)
+- Web 服务器：Nginx (Alpine)
+- 容器化：Docker
+
+## 许可证
+
+仅供学习交流使用，请尊重游戏版权。
+
+## 相关链接
+
+- [JSNES 官方](https://github.com/bfirsh/jsnes)
+- [GitHub Packages](https://github.com/liangminmx/bawang-nes/pkgs/container/bawang-nes)
