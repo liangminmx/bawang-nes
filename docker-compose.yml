@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   bawang:
-    image: ghcr.io/liangminmx/bawang-nes:latest
+    image: bawangnes:latest
     container_name: bawang-nes
     ports:
       - "8080:80"
