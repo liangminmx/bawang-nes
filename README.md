@@ -2,8 +2,8 @@
 
 基于 JSNES 的网页版 NES 模拟器，在浏览器中即可玩 FC/魂斗罗等经典游戏。
 
-![Docker Image Size](https://img.shields.io/docker/image-size/ghcr.io/liangminmx/bawang-nes?style=flat)
-![Docker Pulls](https://img.shields.io/docker/pulls/ghcr.io/liangminmx/bawang-nes?style=flat)
+![Docker Image Size](https://img.shields.io/docker/image-size/jzbdc/bawangnes?style=flat)
+![Docker Pulls](https://img.shields.io/docker/pulls/jzbdc/bawangnes?style=flat)
 
 ## 特性
 
@@ -33,10 +33,10 @@ docker-compose up -d
 
 ```bash
 # 拉取镜像
-docker pull ghcr.io/liangminmx/bawang-nes:latest
+docker pull jzbdc/bawangnes:latest
 
 # 运行容器
-docker run -d -p 8080:80 --name bawang-nes ghcr.io/liangminmx/bawang-nes:latest
+docker run -d -p 8080:80 --name bawang-nes jzbdc/bawangnes:latest
 
 # 访问游戏
 # http://localhost:8080
@@ -48,7 +48,7 @@ docker run -d -p 8080:80 --name bawang-nes ghcr.io/liangminmx/bawang-nes:latest
 docker run -d \
   --name bawang-nes \
   -p 8080:80 \
-  ghcr.io/liangminmx/bawang-nes:latest
+  jzbdc/bawangnes:latest
 ```
 
 ## 控制说明
