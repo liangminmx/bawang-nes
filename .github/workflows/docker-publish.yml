@@ -17,13 +17,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          lfs: true
 
-      - name: Verify LFS files
+      - name: Verify files
         run: |
-          ls -la roms/ | head -5
+          echo "=== roms count ==="
+          ls roms/ | wc -l
+          echo "=== roms size ==="
+          du -sh roms/
+          echo "=== list files ==="
+          ls -la roms/ | head -10
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
