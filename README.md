@@ -91,6 +91,10 @@ docker-compose restart
 
 仅供学习交流使用，请尊重游戏版权。
 
+## 致谢
+
+感谢原作者及资源收集者的辛苦付出！
+
 ## 相关链接
 
 - [JSNES 官方](https://github.com/bfirsh/jsnes)
