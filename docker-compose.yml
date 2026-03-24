@@ -2,7 +2,15 @@ version: '3.8'
 
 services:
   bawang:
-    build: .
+    image: ghcr.io/liangminmx/bawang-nes:latest
+    container_name: bawang-nes
     ports:
       - "8080:80"
     restart: unless-stopped
+
+  # 本地开发使用
+  # bawang:
+  #   build: .
+  #   ports:
+  #     - "8080:80"
+  #   restart: unless-stopped
