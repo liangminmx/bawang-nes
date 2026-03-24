@@ -6,4 +6,6 @@ services:
     container_name: bawang-nes
     ports:
       - "8080:80"
+    volumes:
+      - ./roms:/usr/share/nginx/html/roms
     restart: unless-stopped
