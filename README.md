@@ -2,6 +2,8 @@
 
 基于 JSNES 的网页版 NES 模拟器，在浏览器中即可玩 FC/魂斗罗等经典游戏。
 
+> 此项目是根据 [echeverra.cn/bawang](https://echeverra.cn/bawang) 改造的 Docker 镜像
+
 ![Docker Image Size](https://img.shields.io/docker/image-size/jzbdc/bawangnes?style=flat)
 ![Docker Pulls](https://img.shields.io/docker/pulls/jzbdc/bawangnes?style=flat)
 
