@@ -2,11 +2,8 @@ version: '3.8'
 
 services:
   bawang:
-    image: crpi-n0qa5l5p1s2ch2rw.cn-chengdu.personal.cr.aliyuncs.com/jzbdc/jzbdc:latest
+    image: ghcr.io/liangminmx/bawang-nes:latest
     container_name: bawang-nes
     ports:
       - "8080:80"
     restart: unless-stopped
-
-  # GitHub 镜像（备选）
-  # image: ghcr.io/liangminmx/bawang-nes:latest
